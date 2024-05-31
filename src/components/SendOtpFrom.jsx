@@ -1,7 +1,7 @@
 import React from "react";
 import { sendOtp } from "../services/auth";
 
-function SendOtpFrom({ mobile, setMobile, setStep }) {
+function SendOtpFrom({ mobile, setMobile, setStep}) {
   const submitHandler = async (event) => {
     event.preventDefault();
     if (mobile.length !== 11) return;
@@ -10,9 +10,10 @@ function SendOtpFrom({ mobile, setMobile, setStep }) {
     console.log({ response, error });
 
     if (response) setStep(2);
+
     if (error) console.log(error.response.data.message);
   };
-
+  
   return (
     <form onSubmit={submitHandler}>
       <p>ورود به حساب کاربری</p>
